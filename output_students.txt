@@ -1,0 +1,6 @@
+1. student: Akla Alicja wiek: 21
+2. student: Bodo Batrek wiek: 20
+3. student: Czyzyk Celina wiek: 21
+4. student: Dab Damian wiek: 22
+5. student: Elo Eustachy wiek: 20
+6. student: Koch Maciej wiek: 22
