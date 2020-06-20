@@ -11,4 +11,12 @@ vendingMachine = [Product "Coke" 15 2.50,
                   Product "7Days" 11 2.80 ]
 
 
-changeAmount name list = [ if name prod == name then Product (name prod) (amount prod)-1 (price prod) else Product (name prod) (amount prod) (price prod)  | prod <- list]
+
+changeAmount what list = [ if name prod == what then (Product (name prod) (amount prod -1) (price prod)) else (Product (name prod) (amount prod) (price prod)) | prod <- list]
+
+
+main :: IO ()
+main = do
+  putStrLn "What do u want to buy ?"
+  
+  
