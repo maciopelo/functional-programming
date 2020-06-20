@@ -71,10 +71,10 @@ makeHtmlTable input output = do
 
 
 -- 5. Wygenerować listę zmian w postaci typu wydarzenia
-compareLists :: Monad m => [Student] -> [Student] -> m [[[Char]]]
+compareLists:: Monad m => [Student] -> [Student] -> m [StudentsFirstNameChangeEvent]
 compareLists firstList secondList = do 
     let tmp = zip firstList secondList
-    let result = [if firstName (fst x)  == firstName (snd x) then ["same"] else [firstName (fst x), firstName(snd x)] | x <- tmp]
+    let result = [if firstName (fst x)  == firstName (snd x) then StudentsFirstNameChangeEvent (firstName (fst x)) (firstName (snd x)) else StudentsFirstNameChangeEvent (firstName (fst x)) (firstName (snd x)) | x <- tmp]
     return result
 
 
@@ -89,7 +89,7 @@ makeTxtRaport input output  = do
     let content = concat [studentTupleToString x | x <- numberedList]
     writeFile output content
 
-
+    
 
 
 main = do 
@@ -102,7 +102,8 @@ main = do
     print "4. Wygenerowac tabelke HTML"
     makeHtmlTable "students.txt" "students.html"
     print "5. Wygenerowac liste zmian w postaci typu wydarzenia"
-    compareLists listToProcess modifiedList
+    x <- compareLists listToProcess modifiedList
+    print x
     print "6. Dane zaczytano z students.txt"
 
 
