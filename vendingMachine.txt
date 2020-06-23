@@ -1,0 +1,11 @@
+5 3 7 6 6 5 
+0 Coke 9 2.5
+1 Fanta 11 2.3
+2 Water 19 2.0
+3 Orange-Juice 8 3.0
+4 Lay's 16 2.0
+5 Snickers 29 2.0
+6 Price-Polo 10 1.8
+7 7Days 7 2.8
+8 Orbit 12 1.5
+9 Tiger 6 2.8
